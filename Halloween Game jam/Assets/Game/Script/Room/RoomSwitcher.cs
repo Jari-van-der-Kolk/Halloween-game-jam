@@ -16,7 +16,7 @@ public class RoomSwitcher : MonoBehaviour
     {
         _camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         current = GetComponent<Transform>();
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerPos = GameObject.FindGameObjectWithTag("Ghost").GetComponent<Transform>();
     }
     
     void Update()
