@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class IsPossessed : Interaction
@@ -13,6 +14,10 @@ public class IsPossessed : Interaction
     [SerializeField] private GameObject humanInteraction;
     private Rigidbody2D playerRb;
     private Rigidbody2D rb;
+    [SerializeField] private GameObject humanUIPanel;
+    [SerializeField] private Patrol patrol;
+    [SerializeField] private AIPath aiPath;
+    
     
     private void Awake()
     {
@@ -37,8 +42,6 @@ public class IsPossessed : Interaction
             playerPos.position = new Vector3(transform.position.x, transform.position.y - sr.size.y, 0);
             PlayerSr.sortingOrder = 1;
         }
-
-        
     }
 
     public override string GetDescription()
@@ -57,6 +60,10 @@ public class IsPossessed : Interaction
             humanInteraction.SetActive(true);
             playerRb.gravityScale = 1;
             rb.gravityScale = 0;
+            humanUIPanel.SetActive(true);
+            aiPath.enabled = false;
+            patrol.enabled = false;
+
         }
         else
         {
@@ -64,6 +71,9 @@ public class IsPossessed : Interaction
             playerRb.gravityScale = 0;
             rb.gravityScale = 1; 
             humanInteraction.SetActive(false);
+            humanUIPanel.SetActive(false);
+            aiPath.enabled = true;
+            patrol.enabled = true;
         }
     }
 }
