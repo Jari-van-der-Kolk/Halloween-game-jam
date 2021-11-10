@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     {
         isPaused = false;
         pausePanel.SetActive(isPaused);
+        hasWonPanel.SetActive(false);
     }
 
     void Update()

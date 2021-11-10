@@ -26,19 +26,19 @@ public class RoomSwitcher : MonoBehaviour
         float2 pPos = new float2(playerPos.position.x, playerPos.position.y);
         if (pPos.x >= boundarie.xMax)
         {
-            current.position += new Vector3(_camera.orthographicSize * 2, 0) ;
+            current.position += new Vector3(_camera.orthographicSize * 2.8f, 0) ;
         }
         if (pPos.x <= boundarie.xMin)
         {
-            current.position += new Vector3(-_camera.orthographicSize * 2, 0) ;
+            current.position += new Vector3(-_camera.orthographicSize * 2.8f, 0) ;
         }
         if (pPos.y >= boundarie.yMax)
         {
-            current.position += new Vector3(0, _camera.orthographicSize * 1.75f) ;           
+            current.position += new Vector3(0, _camera.orthographicSize * 1.5f) ;           
         }
         if (pPos.y <= boundarie.yMin)
         {
-            current.position += new Vector3(0, -_camera.orthographicSize * 1.75f) ;   
+            current.position += new Vector3(0, -_camera.orthographicSize * 1.5f) ;   
         }
     }
 
