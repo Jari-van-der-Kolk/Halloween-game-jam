@@ -15,8 +15,10 @@ public class IsPossessed : Interaction
     private Rigidbody2D playerRb;
     private Rigidbody2D rb;
     [SerializeField] private GameObject humanUIPanel;
+    [SerializeField] private GameObject AI;
     [SerializeField] private Patrol patrol;
     [SerializeField] private AIPath aiPath;
+    [SerializeField] private float followHeight;
     
     
     private void Awake()
@@ -55,11 +57,11 @@ public class IsPossessed : Interaction
         if (isPossessed == true)
         {
             PlayerState.instance.walkingMode = PlayerState.WalkingMode.Human;
-            transform.position = new Vector3(playerPos.position.x, playerPos.position.y + sr.size.y, 0);
+            transform.position = new Vector3(playerPos.position.x, playerPos.position.y + followHeight, 0);
             PlayerSr.sortingOrder = -1;
             humanInteraction.SetActive(true);
             playerRb.gravityScale = 1;
-            rb.gravityScale = 0;
+            //rb.gravityScale = 1;
             humanUIPanel.SetActive(true);
             aiPath.enabled = false;
             patrol.enabled = false;
@@ -69,7 +71,7 @@ public class IsPossessed : Interaction
         {
             PlayerState.instance.walkingMode = PlayerState.WalkingMode.Ghost;
             playerRb.gravityScale = 0;
-            rb.gravityScale = 1; 
+            //rb.gravityScale = 1; 
             humanInteraction.SetActive(false);
             humanUIPanel.SetActive(false);
             aiPath.enabled = true;
