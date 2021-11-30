@@ -34,7 +34,7 @@ public class Stove : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             indexOrder++;
-            Debug.Log(indexOrder > itemOrderData[ItemOrderListIndex].ItemOrder.Length);
+            //Debug.Log(indexOrder > itemOrderData[ItemOrderListIndex].ItemOrder.Length);
             if (indexOrder >= itemOrderData[ItemOrderListIndex].ItemOrder.Length)
             {
                 winPanel.SetActive(true);                

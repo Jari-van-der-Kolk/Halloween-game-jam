@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rb;
 
+    private SpriteRenderer sr;
+
     private void Awake()
     {
         instance = this;
