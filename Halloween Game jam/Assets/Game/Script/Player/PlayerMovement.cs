@@ -31,10 +31,10 @@ public class PlayerMovement : MonoBehaviour
         {
             case PlayerState.WalkingMode.Ghost:
                 //rb.gravityScale = 0;
-                transform.position += new Vector3(input.x, input.y) * (speed * Time.deltaTime) ;
+                rb.velocity = new Vector3(input.x, input.y) * (speed * Time.deltaTime) ;
                 break;
             case PlayerState.WalkingMode.Human:
-                transform.position += new Vector3(input.x, 0) * (speed * Time.deltaTime) ;
+                rb.velocity = new Vector3(input.x, 0) * (speed * Time.deltaTime) ;
                 //rb.gravityScale = 1;
                 break;
         }
