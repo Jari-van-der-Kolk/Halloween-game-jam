@@ -22,6 +22,7 @@ public class IsPossessed : Interaction
 
     
     private GameObject playerObj;
+    [SerializeField] private GameObject playerInteract;
 
     
     private void Awake()
@@ -63,11 +64,21 @@ public class IsPossessed : Interaction
         {
             PlayerState.instance.walkingMode = PlayerState.WalkingMode.Human;
             transform.position = new Vector3(playerPos.position.x, playerPos.position.y + followHeight, 0);
-            //transform.position = Vector3.Lerp(transform.position, playerPos.position + (Vector3.up * followHeight), 1f);
             PlayerSr.sortingOrder = -1;
             humanInteraction.SetActive(true);
             playerRb.gravityScale = 0;
+            
+            playerInteract.SetActive(false);
 
+            if (playerRb.velocity.x >= .1f)
+            {
+                sr.flipX = false;
+            }
+
+            if (playerRb.velocity.x <= .1f)
+            {
+                sr.flipX = true;
+            }
             /*playerObj.GetComponent<PlayerMovement>().enabled = false;
             humanMovement.enabled = true;*/
             
@@ -83,6 +94,8 @@ public class IsPossessed : Interaction
             playerRb.gravityScale = 0;
             rb.gravityScale = 1; 
 
+            playerInteract.SetActive(true);
+            
             /*playerObj.GetComponent<PlayerMovement>().enabled = true;
             humanMovement.enabled = false;*/
             
