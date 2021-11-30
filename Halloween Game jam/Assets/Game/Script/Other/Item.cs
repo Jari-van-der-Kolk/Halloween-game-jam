@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Item : Interaction
 {
-    [SerializeField] private ItemData itemData;
+    public ItemData itemData;
     [SerializeField] private Vector2 size;
     [SerializeField] private LayerMask layermask;
     private SpriteRenderer spr;

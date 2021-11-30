@@ -16,6 +16,7 @@ public class Door : Interaction
     [SerializeField] private Direction direction;
     [SerializeField] private Transform loc; 
     private SpriteRenderer sr;
+    [SerializeField] private float spawnHeight;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class Door : Interaction
 
     public void PlayerToObjectLocation(Transform objLoc)
     {
-        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y - sr.size.y);
+        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y - 1);
     }
 
     public override string GetDescription()
