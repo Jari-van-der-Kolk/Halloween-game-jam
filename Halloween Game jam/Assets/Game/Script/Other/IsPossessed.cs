@@ -22,6 +22,7 @@ public class IsPossessed : Interaction
 
     
     private GameObject playerObj;
+    [SerializeField] private GameObject playerInteract;
 
     
     private void Awake()
@@ -66,6 +67,8 @@ public class IsPossessed : Interaction
             PlayerSr.sortingOrder = -1;
             humanInteraction.SetActive(true);
             playerRb.gravityScale = 0;
+            
+            playerInteract.SetActive(false);
 
             if (playerRb.velocity.x >= .1f)
             {
@@ -91,6 +94,8 @@ public class IsPossessed : Interaction
             playerRb.gravityScale = 0;
             rb.gravityScale = 1; 
 
+            playerInteract.SetActive(true);
+            
             /*playerObj.GetComponent<PlayerMovement>().enabled = true;
             humanMovement.enabled = false;*/
             
