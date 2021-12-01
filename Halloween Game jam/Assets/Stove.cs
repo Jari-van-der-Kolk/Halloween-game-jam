@@ -22,7 +22,6 @@ public class Stove : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(indexOrder < itemOrderData[ItemOrderListIndex].ItemOrder.Length);
         if(indexOrder < itemOrderData[ItemOrderListIndex].ItemOrder.Length)
             getItemUI.text = "Get " + itemOrderData[ItemOrderListIndex].ItemOrder[indexOrder].name;
         

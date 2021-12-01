@@ -23,8 +23,8 @@ TagManager:
   - Ignore Collider
   - Obstacle
   - Non ghost obstacle
-  - 
-  - 
+  - Mouse Collider
+  - Human Collider
   - 
   - 
   - 

@@ -33,7 +33,7 @@ public class Door : Interaction
 
     public void PlayerToObjectLocation(Transform objLoc)
     {
-        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y - 1);
+        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y - spawnHeight);
     }
 
     public override string GetDescription()
