@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4271ba6c50d2644fba56ba435cc04c0, type: 3}
   m_Name: Item collect order 3
   m_EditorClassIdentifier: 
-  ItemOrder: []
+  ItemOrder:
+  - {fileID: 4545206071579500495, guid: 59e35daca0769314d8b8fccbd5037dce, type: 3}
+  - {fileID: 4545206071579500495, guid: 34432c6f4fb8aba4abf63b684be95ec6, type: 3}
+  - {fileID: 4545206071579500495, guid: 792b4e7f5593c1448a305f029eb3d232, type: 3}
+  - {fileID: 4545206071579500495, guid: c4d29e3f1f1d803409e27c1f475e4d65, type: 3}
+  - {fileID: 4545206071579500495, guid: f935d3627412fbc41b25da428b18839b, type: 3}
+  - {fileID: 4545206071579500495, guid: 580db90b4b29ec94cb63082f9c922e0f, type: 3}
+  - {fileID: 4545206071579500495, guid: 75e2bfef9ca14564b91e9da44686c3e9, type: 3}
