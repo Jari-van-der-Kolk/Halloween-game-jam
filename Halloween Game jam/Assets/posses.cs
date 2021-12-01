@@ -13,6 +13,7 @@ public class posses : Interaction
     private Transform playerPos;
     private SpriteRenderer sr;
 
+    [SerializeField] private GameObject humanUIPanel;
     [SerializeField] private float playerFollowHeight;
 
     private IsPossessed p;
@@ -27,6 +28,7 @@ public class posses : Interaction
         PlayerSr = playerObj.GetComponent<SpriteRenderer>();
         playerPos = playerObj.GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
+        playerRb = playerObj.GetComponent<Rigidbody2D>();
 
     }
 
@@ -50,9 +52,28 @@ public class posses : Interaction
                 otherPossesCollider.enabled = true;
             } 
         }
-        
-      
+    }
 
+    private void Update()
+    {
+        if (isPossessed)
+        {
+            humanUIPanel.SetActive(true);
+
+            if (playerRb.velocity.x >= .1f)
+            {
+                sr.flipX = false;
+            }
+
+            if (playerRb.velocity.x <= .1f)
+            {
+                sr.flipX = true;
+            }
+        }
+        else
+        {
+            humanUIPanel.SetActive(false);
+        }
     }
 
     public override string GetDescription()

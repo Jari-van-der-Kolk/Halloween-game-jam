@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4545206071579500482}
   - component: {fileID: 4545206071579500495}
   m_Layer: 6
-  m_Name: Tomato
+  m_Name: Medicine
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d02f8a96ee1c24d91a3a2cd0f5fb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 1e8f071baa0ce1f4180008e58096e503, type: 2}
+  itemData: {fileID: 11400000, guid: 67b389ee3f7101743b5280b6af76fdc3, type: 2}
   size: {x: 2, y: 2}
   layermask:
     serializedVersion: 2

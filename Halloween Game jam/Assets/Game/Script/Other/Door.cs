@@ -33,7 +33,7 @@ public class Door : Interaction
 
     public void PlayerToObjectLocation(Transform objLoc)
     {
-        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y - spawnHeight);
+        PlayerMovement.instance.transform.position = new Vector3(objLoc.position.x, objLoc.position.y + spawnHeight);
     }
 
     public override string GetDescription()
@@ -41,9 +41,10 @@ public class Door : Interaction
         if (direction == Direction.Upstairs) return string.Format("Press [E] to go Upstairs"); 
         return string.Format("Press [E] to go Down Stairs");
     }
-    
-    
-    
-    
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        /*if (other.CompareTag("Human")) spawnHeight = -.35f;
+        if (other.CompareTag("Mouse")) spawnHeight = -1.9f;*/
+    }
 }

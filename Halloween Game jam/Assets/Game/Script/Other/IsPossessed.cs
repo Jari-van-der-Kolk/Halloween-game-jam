@@ -15,7 +15,6 @@ public class IsPossessed : MonoBehaviour
     [SerializeField] private GameObject humanInteraction;
     private Rigidbody2D playerRb;
     private Rigidbody2D rb;
-    [SerializeField] private GameObject humanUIPanel;
     [SerializeField] private float followHeight;
 
     
@@ -52,7 +51,6 @@ public class IsPossessed : MonoBehaviour
             playerRb.gravityScale = 0;
             
             rb.gravityScale = 0;
-            humanUIPanel.SetActive(true);
         }
         else
         {
@@ -60,17 +58,8 @@ public class IsPossessed : MonoBehaviour
             rb.gravityScale = 1;
             
             humanInteraction.SetActive(false);
-            humanUIPanel.SetActive(false);
         }
         
-        if (playerRb.velocity.x >= .1f)
-        {
-            sr.flipX = false;
-        }
-
-        if (playerRb.velocity.x <= .1f)
-        {
-            sr.flipX = true;
-        }
+       
     }
 }
