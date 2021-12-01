@@ -15,7 +15,8 @@ public class posses : Interaction
 
     [SerializeField] private GameObject humanUIPanel;
     [SerializeField] private float playerFollowHeight;
-
+    [SerializeField] private ItemInventory otherInventory;
+    
     private IsPossessed p;
 
     [SerializeField] private BoxCollider2D otherPossesCollider;
@@ -40,15 +41,19 @@ public class posses : Interaction
         {
             isPossessed = !isPossessed;
             playerPos.position = new Vector3(transform.position.x, transform.position.y + playerFollowHeight, 0);
-            PlayerSr.sortingOrder = 1;
+            PlayerSr.sortingOrder = 6;
             if (isPossessed == true)
             {
                 PlayerState.instance.walkingMode = PlayerState.WalkingMode.Human;
+                otherInventory.enabled = false;
+                humanUIPanel.SetActive(true);
                 otherPossesCollider.enabled = false;
             }
             else
             {
                 PlayerState.instance.walkingMode = PlayerState.WalkingMode.Ghost;
+                humanUIPanel.SetActive(false);
+                otherInventory.enabled = true;
                 otherPossesCollider.enabled = true;
             } 
         }
@@ -58,7 +63,6 @@ public class posses : Interaction
     {
         if (isPossessed)
         {
-            humanUIPanel.SetActive(true);
 
             if (playerRb.velocity.x >= .1f)
             {
@@ -72,7 +76,6 @@ public class posses : Interaction
         }
         else
         {
-            humanUIPanel.SetActive(false);
         }
     }
 
